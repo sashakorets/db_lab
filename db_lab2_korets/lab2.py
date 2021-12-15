@@ -8,14 +8,14 @@ host = 'localhost'
 port = '5432'
 
 query_1 = '''
-select country, count(country) from wines join province on wines.region = province.region inner join country on province.province = country.province group by country;
+select country, count(country) from wines join province on wines.region = province.region join country on province.province = country.province group by country;
 '''
 query_2 = '''
-select wine_id, wine_price from wines join province on wines.region = province.region inner join country on province.province = country.province order by 1;
+select wine_id, wine_price from wines join province on wines.region = province.region join country on province.province = country.province order by 1;
 '''
 
 query_3 = '''
-select wine_points, count(wine_points) from wines join province on wines.region = province.region inner join country on province.province = country.province group by wine_points;
+select wine_points, count(wine_points) from wines join province on wines.region = province.region join country on province.province = country.province group by wine_points;
 '''
 
 con = psycopg2.connect(user=username, password=password, dbname=database, host=host, port=port)
