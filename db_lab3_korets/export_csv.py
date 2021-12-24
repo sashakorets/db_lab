@@ -9,11 +9,6 @@ port = '5432'
 
 csv_out = 'Korets_DB.csv'
 
-tables = [
-    'wines',
-    'province',
-    'country'
-]
 
 conn = psycopg2.connect(user=username, password=password, dbname=database, host = host, port = port)
 
